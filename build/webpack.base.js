@@ -32,7 +32,7 @@ module.exports = (env) => { // env 是环境变量
           test: /\.less$/,
           // use: ['style-loader', 'css-loader', 'less-loader']
           // 第二种写法
-          loader: "style-loader!css-loader!less-loader"
+          loader: "style-loader!css-loader!postcss-loader!less-loader"
         }
       ]
     },
@@ -55,6 +55,8 @@ module.exports = (env) => { // env 是环境变量
   }
   if (isDev) {
     return merge(base,dev)
+  } else {
+    return merge(base, prod)
   }
-  return merge(base, prod)
+  
 }
