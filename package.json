@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --env.development --config ./build/webpack.base.js",
     "build-dev": "webpack-dev-server --env.development --config ./build/webpack.base.js",
     "build-dev:js": "cross-env NODE_ENV=deve webpack --config ./build/webpack.base.js",
     "build": "webpack --env.production --config ./build/webpack.base.js"
@@ -32,5 +33,10 @@
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.2",
     "webpack-merge": "^4.2.2"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }

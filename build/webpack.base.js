@@ -42,7 +42,7 @@ module.exports = (env) => { // env 是环境变量
     },
     plugins: [
       // 在每次打包之前 先清除dist目录下的文件
-      new CleanWebpackPlugin(),
+      new CleanWebpackPlugin(), // 和 rm -rf ./dist一样
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, '../public/index.html'),
         filename: 'index.html',
@@ -54,9 +54,10 @@ module.exports = (env) => { // env 是环境变量
     ]
   }
   if (isDev) {
-    return merge(base,dev)
+    return merge(base, dev)
   } else {
     return merge(base, prod)
   }
   
 }
+
